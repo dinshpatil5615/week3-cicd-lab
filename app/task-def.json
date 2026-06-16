@@ -1,0 +1,22 @@
+{
+  "family": "week3-app",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::272206396644:role/ecsTaskExecutionRole",
+  "containerDefinitions": [{
+    "name": "week3-app",
+    "image": "272206396644.dkr.ecr.ap-south-1.amazonaws.com/week3-app:latest",
+    "portMappings": [{"containerPort": 5000, "protocol": "tcp"}],
+    "essential": true,
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/ecs/week3-app",
+        "awslogs-region": "ap-south-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }]
+}
