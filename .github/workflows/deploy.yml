@@ -17,7 +17,7 @@ jobs:
     name: Build image and push to ECR
     runs-on: ubuntu-latest
     outputs:
-      image: `${{ steps.build-image.outputs.image }}
+      image: `${{ steps.build-image.outputs.image }}`
 
     steps:
     - name: Checkout code
